@@ -186,6 +186,17 @@ class AdminController extends BaseController {
         \Session::flash('message',$message);
         return redirect()->back();
     }
+    public function callPostFunction(){
+        $module=\Neyko\Admin\Model\AdminModule::where("name","=",\Input::get("module"))->first();
+        $model=$module->model;
+        $item=$model::find(\Input::get("id"));
+        $function=\Input::get("function");
+        $message=$item->$function();
+        $log=\Neyko\Admin\Model\AdminLog::create(array("username"=>\Neyko\Admin\Model\Administrator::find(\Session::get("admin"))->username,"message"=>"claimed ".$module->singular." <b>".\Input::get($module->main)."</b>"));
+        $log->save();
+        \Session::flash('message',$message);
+        return redirect("/admin/".$module->name."/edit/".$item->id);
+    }
 
     public function delete($module,$id){
         $module=\Neyko\Admin\Model\AdminModule::where("name","=",$module)->first();

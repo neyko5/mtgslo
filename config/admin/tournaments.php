@@ -124,9 +124,9 @@ return array(
                 'main' => 'full_name',
                 'columns' =>array(
                     array(
-                        'name'=>'id',
+                        'name'=>'place',
                         'type'=>'text',
-                        'title'=>"ID"
+                        'title'=>'Place'
                     ),
                     array(
                         'name'=>'full_name',
@@ -139,10 +139,11 @@ return array(
                         'title'=>'DCI'
                     ),
                     array(
-                        'name'=>'place',
+                        'name'=>'points',
                         'type'=>'text',
-                        'title'=>'Place'
+                        'title'=>'Points'
                     ),
+
                 ),
                 'options' => array(
                     'edit',
@@ -173,6 +174,15 @@ return array(
                 "column"=>0,
                 "direction"=>"desc"
             )
-        )
+        ),
+        'functions'=>array(
+            array(
+                'label'=>"Upload results",
+                'name'=>"processResults",
+                'icon'=>'fa-sign-in',
+                'upload'=>true,
+                'post'=>true
+            ),
+        ),
     ),
 );

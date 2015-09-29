@@ -8,7 +8,7 @@ class Ranking extends Model{
 
     protected $table = 'rankings';
 
-    protected $fillable = ['tournid','dci','full_name','place','points','leaguepoints','decklist'];
+    protected $fillable = ['id_tournament','dci','full_name','place','points','leaguepoints','decklist'];
 
     public function tournament(){
         return $this->belongsTo("\MtgSlo\Tournament","id_tournament");

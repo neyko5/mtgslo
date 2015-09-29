@@ -24,6 +24,7 @@
         Route::post("{module}/edit",'\Neyko\Admin\Http\Controller\AdminController@saveForm');
         Route::get("{module}/delete/{id}",'\Neyko\Admin\Http\Controller\AdminController@delete');
         Route::get("{module}/function/{function}/{id}",'\Neyko\Admin\Http\Controller\AdminController@callFunction');
+        Route::post("/postfunction",'\Neyko\Admin\Http\Controller\AdminController@callPostFunction');
 
         Route::post("/post/switch",'\Neyko\Admin\Http\Controller\AdminController@processSwitch');
         

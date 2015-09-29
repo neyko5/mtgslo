@@ -117,6 +117,27 @@
                         <div id="{{$function['name']}}-{{$row->id}}" class="modal fade">
                             <div class="modal-dialog">
                                 <div class="modal-content">
+                                    @if(isset($function['post']))
+                                    {!! \Form::open(array("method"=>"POST","enctype"=>"multipart/form-data","url"=>"/admin/postfunction")) !!}
+                                    <input type="hidden" name="id" value="{{$row->id}}" />
+                                    <input type="hidden" name="module" value="{{$module['name']}}" />
+                                    <input type="hidden" name="function" value="{{$function['name']}}" />
+                                    <div class="modal-header">
+                                        <button data-dismiss="modal" class="close" type="button">×</button>
+                                        <h4>{{$function['label']}} <span style="text-transform: lowercase;">{{$module['name']}}</span></h4>
+                                    </div>
+                                    <div class="modal-body">
+                                        <p>{{$function['label']}} <span style="text-transform: lowercase;">{{$module['name']}}</span> <b>{{$row->$module['main']}}</b>?</p>
+                                        @if(isset($function['upload']))
+                                        <input type="file" name="file" style="position:relative;opacity:1; z-index:30;" />
+                                        @endif
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="submit" class="btn btn-success"><i class="fa {{$function['icon']}}"></i> {{$function['label']}}</button>
+                                        <button data-dismiss="modal" class="btn btn-danger" type="button">{{Lang::get('admin::templates.32')}}</button>
+                                    </div>
+                                    {!! \Form::close() !!}
+                                    @else
                                     <div class="modal-header">
                                         <button data-dismiss="modal" class="close" type="button">×</button>
                                         <h4>{{$function['label']}} <span style="text-transform: lowercase;">{{$module['name']}}</span></h4>
@@ -128,6 +149,7 @@
                                         <a href="/admin/{{$module['name']}}/function/{{$function['name']}}/{{$row->id}}" class="btn btn-success"><i class="fa {{$function['icon']}}"></i> {{$function['label']}}</a>
                                         <button data-dismiss="modal" class="btn btn-danger" type="button">{{Lang::get('admin::templates.32')}}</button>
                                     </div>
+                                    @endif
                                 </div>
                             </div>
                         </div>
