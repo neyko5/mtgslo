@@ -16,7 +16,7 @@ return array(
                 'type'  => 'picture',
                 'name'  => 'picture',
                 'label' => 'Picture',
-                'path' =>'formats',
+                'path' =>'news',
                 'thumb'=>'305w',
                 'sizes'=>array(
                     array(
