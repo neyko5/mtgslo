@@ -11,7 +11,7 @@
                     <div class="post @if($key%3==2) last @endif">
                         @if($new->picture)
                             <div class="img">
-                                <img src="/files/novice/206w/{{$new->picture}}">
+                                <img src="/files/news/305w/{{$new->picture}}">
                             </div>
                         @endif
                         <div class="text">

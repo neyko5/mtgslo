@@ -13,7 +13,7 @@
                     @if($article->picture)
                     <div class="img">
                         <a href="/clanki/{{$article->link()}}">
-                            <img src="/files/clanki/278w/{{$article->picture}}" alt="" class="img-responsive" />
+                            <img src="/files/articles/305w/{{$article->picture}}" alt="" class="img-responsive" />
                         </a>
                     </div>
                     @endif

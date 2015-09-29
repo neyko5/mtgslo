@@ -4,7 +4,7 @@
         <div id="blog_post">
             <div class="row">
                 <div class="col-sm-8">
-                    <img class="post_pic img-responsive" src="/files/lige/556w/{{$league->picture}}" />
+                    <img class="post_pic img-responsive" src="/files/leagues/594w/{{$league->picture}}" />
 
                     <div class="post_content">
                         <h2>{{$league->title}}</h2>

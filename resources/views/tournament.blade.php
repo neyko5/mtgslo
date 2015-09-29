@@ -4,7 +4,7 @@
         <div id="blog_post">
             <div class="row">
                 <div class="col-sm-8">
-                    <img class="post_pic img-responsive" src="/files/turnirji/556w/{{$tournament->picture}}" />
+                    <img class="post_pic img-responsive" src="/files/tournaments/594w/{{$tournament->picture}}" />
 
                     <div class="post_content">
                         <h2>{{$tournament->name}}</h2>

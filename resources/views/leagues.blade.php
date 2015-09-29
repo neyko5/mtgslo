@@ -11,7 +11,7 @@
                     @if($league->picture)
                         <div class="img">
                             <a href="/lige/{{$league->link()}}">
-                                <img src="/files/lige/278w/{{$league->picture}}" alt="" class="img-responsive" />
+                                <img src="/files/leagues/305w/{{$league->picture}}" alt="" class="img-responsive" />
                             </a>
                         </div>
                     @endif

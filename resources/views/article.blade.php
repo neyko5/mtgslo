@@ -4,7 +4,7 @@
         <div id="blog_post">
         <div class="row">
             <div class="col-sm-8">
-                <img class="post_pic img-responsive" src="/files/clanki/580w/{{$article->picture}}" />
+                <img class="post_pic img-responsive" src="/files/articles/594w/{{$article->picture}}" />
 
                 <div class="post_content">
                     <h2>{{$article->title}}</h2>

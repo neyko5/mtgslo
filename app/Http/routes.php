@@ -21,3 +21,4 @@ Route::get('/trgovine',"HomeController@stores");
 
 Route::get('/nagradne',"CompetitionController@index");
 Route::get('/nagradne/{link}/{id}',"CompetitionController@show");
+
