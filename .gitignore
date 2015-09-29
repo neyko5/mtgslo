@@ -1,4 +1,6 @@
 /bootstrap/compiled.php
+/public/files
+.idea/
 .env.*.php
 .env.php
 .env
