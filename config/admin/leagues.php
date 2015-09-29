@@ -11,7 +11,7 @@ return array(
                 'type'  => 'picture',
                 'name'  => 'picture',
                 'label' => 'Picture',
-                'path' =>'formats',
+                'path' =>'leagues',
                 'thumb'=>'305w',
                 'sizes'=>array(
                     array(
