@@ -32,8 +32,8 @@
                             </tr>
                             @if($tournament->league)
                             <tr>
-                                <td>Lokacija</td>
-                                <td><a href="/lige/{{$tournament->league->link()}}">{{$tournament->league->name}}</td>
+                                <td>Liga</td>
+                                <td><a href="/lige/{{$tournament->league->link()}}">{{$tournament->league->title}}</td>
                             </tr>
                             @endif
                             <tr>
