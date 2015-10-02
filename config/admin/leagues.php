@@ -51,7 +51,8 @@ return array(
         ),
         'options' => array(
             'edit',
-            'delete'
+            'delete',
+            'copy'
         ),
         'order'=>array(
             array(

@@ -6,7 +6,7 @@
         <div class="box box-primary">
             {!! \Form::open(array("method"=>"post", "url"=>"/admin/".$module->name."/edit","id"=>"main-form","role"=>"form")) !!}
                 <div class="box-body">
-                    @if($edit)<input type="hidden" name="id" value="{{$item->id}}">@endif
+                    @if(!\Input::get("copy"))<input type="hidden" name="id" value="{{$item->id}}">@endif
                     <input type="hidden" name="module" value="{{$module->name}}">
 
                     

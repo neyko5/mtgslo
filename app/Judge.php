@@ -13,7 +13,7 @@ class Judge extends Model{
     protected $fillable = ['name','level'];
 
     public function __toString(){
-        return $this->name." (".$this->level.")";
+        return $this->name." (L".$this->level.")";
     }
 
 }

@@ -88,11 +88,6 @@ return array(
             ),
             array(
                 'type'  => 'text',
-                'name'  => 'start',
-                'label' => 'Start'
-            ),
-            array(
-                'type'  => 'text',
                 'name'  => 'price',
                 'label' => 'Price'
             ),
@@ -105,11 +100,6 @@ return array(
                 'type'  => 'text',
                 'name'  => 'pwp',
                 'label' => 'PWP'
-            ),
-            array(
-                'type'  => 'text',
-                'name'  => 'rel',
-                'label' => 'REL'
             ),
             array(
                 'type'  => 'ckeditor',
@@ -167,7 +157,8 @@ return array(
         ),
         'options' => array(
             'edit',
-            'delete'
+            'delete',
+            'copy'
         ),
         'order'=>array(
             array(

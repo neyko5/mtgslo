@@ -4,10 +4,55 @@
         <div id="blog_post">
             <div class="row">
                 <div class="col-sm-8">
+                    @if($tournament->picture)
                     <img class="post_pic img-responsive" src="/files/tournaments/594w/{{$tournament->picture}}" />
-
+                    @endif
                     <div class="post_content">
                         <h2>{{$tournament->name}}</h2>
+                        <table class="table">
+                            <tr>
+                                <td>Lokacija</td>
+                                <td>{{$tournament->location}}</td>
+                            </tr>
+                            <tr>
+                                <td>Datum</td>
+                                <td>{{$tournament->date}}</td>
+                            </tr>
+                            <tr>
+                                <td>Začetek prijav</td>
+                                <td>{{$tournament->registration}}</td>
+                            </tr>
+                            <tr>
+                                <td>Začetek turnirja</td>
+                                <td>{{$tournament->start}}</td>
+                            </tr>
+                            <tr>
+                                <td>Sodnik</td>
+                                <td>{{$tournament->judge}}</td>
+                            </tr>
+                            @if($tournament->league)
+                            <tr>
+                                <td>Lokacija</td>
+                                <td><a href="/lige/{{$tournament->league->link()}}">{{$tournament->league->name}}</td>
+                            </tr>
+                            @endif
+                            <tr>
+                                <td>Format</td>
+                                <td>{{$tournament->format}}</td>
+                            </tr>
+                            <tr>
+                                <td>Cena</td>
+                                <td>{{$tournament->price}}</td>
+                            </tr>
+                            <tr>
+                                <td>REL</td>
+                                <td>{{$tournament->rel}}</td>
+                            </tr>
+                            <tr>
+                                <td>Forum link</td>
+                                <td><a href="{{$tournament->forum_link}}" target="_blank">LINK</a></td>
+                            </tr>
+                        </table>
                         {!! $tournament->text !!}
 
                         @if($tournament->rankings->count())
@@ -40,27 +85,21 @@
 
                 <div class="col-sm-4">
                     <div class="sidebar">
-                        <div class="box">
+                        @if($tournament->league)
+                        <div class="box last">
                             <div class="sidebar_header">
                                 <h4>Turnirji lige</h4>
                             </div>
                             <ul class="sidebar_menu">
                                 <ul>
-
+                                    @foreach($tournament->league->tournaments as $tour)
+                                        <li @if($tournament->id==$tour->id) class="active" @endif><a href="/turnirji/{{$tour->link()}}}">{{$tour->name}}</a></li>
+                                    @endforeach
                                 </ul>
                             </ul>
                         </div>
+                        @endif
 
-                        <div class="box last">
-                            <div class="sidebar_header">
-                                <h4>Ostale lige</h4>
-                            </div>
-                            <ul class="sidebar_menu">
-                                <ul>
-
-                                </ul>
-                            </ul>
-                        </div>
                     </div>
                 </div>
             </div>
