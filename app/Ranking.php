@@ -10,6 +10,11 @@ class Ranking extends Model{
 
     protected $fillable = ['id_tournament','dci','full_name','place','points','leaguepoints','decklist'];
 
+    public static function all($columns=array()){
+        return Ranking::where("decklist","<>","")->get();
+
+    }
+
     public function tournament(){
         return $this->belongsTo("\MtgSlo\Tournament","id_tournament");
     }
