@@ -90,7 +90,13 @@ class Tournament extends Model{
                         $dc=(string)$dci;
                         $full=explode(", ",$player['name']);
                         $ime=$full[1]." ".$full[0];
-                        $mp=$player['mp'];
+                        if(isset($player['mp'])){
+                            $mp=$player['mp'];
+                        }
+                        else{
+                            $mp=0;
+                        }
+
                         foreach($xml->participation->role->ref as $role){
                             if($role['person']==$dci){
                                 $place=$role['seq'];
